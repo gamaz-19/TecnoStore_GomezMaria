@@ -14,21 +14,24 @@ create table celular(
     id_marca int not null,
     modelo varchar (50) not null,
     stock int not null,
-    sistemaOperativo varchar (50) not null,
+    sistemaOperativo enum ('IOS','ANDROID') not null,
     gama enum('ALTA','MEDIA','BAJA') not null,
     precio double not null,
     foreign key (id_marca) references marca(id)
 );
 
-
-create table cliente(
+create table persona(
     id int auto_increment primary key,
-    nombre varchar(50) not null,
+    nombre varchar(50)not null,
     identificacion varchar(50) not null,
     correo varchar(50) not null,
     telefono varchar(50) not null
-);
+)
 
+create table cliente(
+    id_persona int auto_increment primary key,
+    foreign key (id_persona) references persona(id)
+);
 
 
 create table venta(
@@ -53,7 +56,6 @@ create table detalle_venta(
 DATOS DE PRUEBA
 
 *Tabla marca
-
 INSERT INTO marca (nombre) VALUES
 ('Samsung'),
 ('Apple'),
@@ -62,22 +64,26 @@ INSERT INTO marca (nombre) VALUES
 ('Nokia');
 
 
-
 * Tabla celular
-
 INSERT INTO celular (id_marca, modelo, stock, sistemaOperativo, gama, precio) VALUES
-(1, 'Galaxy S23', 10, 'Android', 'ALTA', 4200.00),
-(2, 'iPhone 14', 8, 'iOS', 'ALTA', 5500.00),
-(3, 'Redmi Note 12', 20, 'Android', 'MEDIA', 1800.00),
-(4, 'Moto G52', 15, 'Android', 'MEDIA', 1600.00),
-(5, 'C21', 25, 'Android', 'BAJA', 900.00);
+(1, 'Galaxy S23', 10, 'ANDROID', 'ALTA', 4200.00),
+(2, 'iPhone 14', 8, 'IOS', 'ALTA', 5500.00),
+(3, 'Redmi Note 12', 20, 'ANDROID', 'MEDIA', 1800.00),
+(4, 'Moto G52', 15, 'ANDROID', 'MEDIA', 1600.00),
+(5, 'C21', 25, 'ANDROID', 'BAJA', 900.00);
 
-
-*Tabla cliente
-INSERT INTO cliente (nombre, identificacion, correo, telefono) VALUES
+*Tabla persona
+INSERT INTO persona (nombre, identificacion, correo, telefono) VALUES
 ('Juan Pérez', '0102030405', 'juan.perez@gmail.com', '0991234567'),
 ('María Gómez', '0607080910', 'maria.gomez@gmail.com', '0987654321'),
 ('Carlos López', '1112131415', 'carlos.lopez@gmail.com', '0974561238');
+
+
+*Tabla cliente
+INSERT INTO cliente (id_persona) VALUES
+(1),
+(2),
+(3);
 
 
 *Tabla venta
@@ -86,11 +92,12 @@ INSERT INTO venta (id_cliente, fecha, total) VALUES
 (2, '2025-01-12', 3600.00),
 (3, '2025-01-15', 900.00);
 
+
 *Tabla detalle_venta
 INSERT INTO detalle_venta (id_venta, id_celular, cantidad, subtotal) VALUES
-(1, 1, 1, 4200.00),   -- Galaxy S23
-(2, 3, 2, 3600.00),   -- Redmi Note 12
-(3, 5, 1, 900.00);    -- Nokia C21
+(1, 1, 1, 4200.00),
+(2, 3, 2, 3600.00),
+(3, 5, 1, 900.00);
 
 */
 
@@ -108,5 +115,8 @@ SELECT
     c.precio
 FROM celular c
 JOIN marca m ON c.id_marca = m.id;
+
+SHOW COLUMNS FROM celular;
+
 
 */

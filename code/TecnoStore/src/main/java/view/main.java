@@ -1,16 +1,19 @@
-package view;
+package View;
 
-import controller.conecction;
+//Deendencia para la coneccion con bd
+import Controller.ConecctionDB;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
+
+//Pueba inicial de funcionamiento y coneccion a base de datos
         System.out.println("Testing...");
-        
-        conecction db= new conecction();
-        
+
+        ConecctionDB db = new ConecctionDB();
+
         db.conectar();
-        
-        
+        System.out.println("Hola mundo :3 ");
+
     }
 }

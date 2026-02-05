@@ -1,4 +1,10 @@
-controller\conecction.class
-model\categoriaGama$gamaCategoria.class
-view\main.class
-model\categoriaGama.class
+model\Celular$gama.class
+model\Marca.class
+model\Persona.class
+model\Venta.class
+model\Cliente.class
+model\Detalle_venta.class
+view\Main.class
+model\Celular$sistemaOperativo.class
+model\Celular.class
+controller\ConecctionDB.class
