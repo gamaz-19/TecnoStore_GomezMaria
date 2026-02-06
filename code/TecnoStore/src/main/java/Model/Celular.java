@@ -96,17 +96,15 @@ public class Celular {
 
     @Override
     public String toString() {
-        return "Celular{" +
-                "id=" + id +
-                ", modelo='" + modelo + '\'' +
-                ", precio=" + precio +
-                ", stock=" + stock +
-                ", sistemaOperativo=" + sistemaOperativo +
-                ", gama=" + gama +
-                ", marca=" + marca.getNombre() +
-                '}';
+        return "Celular{"
+                + "id=" + id
+                + ", modelo='" + modelo + '\''
+                + ", precio=" + precio
+                + ", stock=" + stock
+                + ", sistemaOperativo=" + sistemaOperativo
+                + ", gama=" + gama
+                + ", marca=" + marca.getNombre()
+                + '}';
     }
-    
-    
-    
+
 }
