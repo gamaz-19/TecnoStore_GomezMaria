@@ -1,8 +1,12 @@
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Controller\ConecctionDB.java
+C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Controller\gestionCelulares.java
+C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Controller\gestionClientes.java
+C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Controller\gestionVentas.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\Celular.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\Cliente.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\Detalle_venta.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\Marca.java
+C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\MenuPrincipal.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\Persona.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\Model\Venta.java
 C:\Users\Maria\Desktop\TecnoStore\code\TecnoStore\src\main\java\View\Main.java

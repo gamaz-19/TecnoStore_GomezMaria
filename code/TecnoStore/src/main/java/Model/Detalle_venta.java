@@ -48,7 +48,7 @@ public class Detalle_venta {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-        recalcularSubtotal(); //Para saber si la cantidad cambua
+        recalcularSubtotal(); //Para saber si la cantidad cambua y recalcular el tota;l
     }
 
     public Celular getCelular() {
@@ -57,7 +57,7 @@ public class Detalle_venta {
 
     public void setCelular(Celular celular) {
         this.celular = celular;
-        recalcularSubtotal();//Para saber si se cambia el celular
+        recalcularSubtotal();//Para saber si se cambia el celular y recalcular el total
     }
 
     public Venta getVenta() {

@@ -2,6 +2,7 @@ package View;
 
 //Deendencia para la coneccion con bd
 import Controller.ConecctionDB;
+import java.sql.Connection;
 
 public class Main {
 
@@ -10,9 +11,9 @@ public class Main {
 //Pueba inicial de funcionamiento y coneccion a base de datos
         System.out.println("Testing...");
 
-        ConecctionDB db = new ConecctionDB();
-
-        db.conectar();
+        ConecctionDB db = ConecctionDB.getInstance();
+        Connection estableciendoCC = db.conectar();
+       
         System.out.println("Hola mundo :3 ");
 
     }
