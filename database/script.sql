@@ -37,7 +37,7 @@ create table cliente(
 create table venta(
     id int auto_increment primary key,
     id_cliente int not null,
-    fecha date not null,
+    fecha varchar(50) not null,
     total double not null,
     foreign key(id_cliente) references cliente(id)
 );

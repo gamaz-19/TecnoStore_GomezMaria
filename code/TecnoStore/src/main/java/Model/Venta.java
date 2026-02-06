@@ -1,10 +1,8 @@
 package Model;
 
-import java.sql.Date;
-
 public class Venta {
 
-    private Date fecha;
+    private String fecha;
     private double total;
     private Cliente cliente;
     private int id;
@@ -17,11 +15,11 @@ public class Venta {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
