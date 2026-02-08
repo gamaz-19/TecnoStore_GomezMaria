@@ -6,6 +6,7 @@ model\Venta.class
 model\Detalle_venta.class
 model\Celular.class
 model\Celular$Gama.class
+controller\MarcaCRUD.class
 model\Celular$SistemaOperativo.class
 controller\gestionCelulares.class
 model\Cliente.class

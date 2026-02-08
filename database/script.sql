@@ -26,10 +26,10 @@ create table persona(
     identificacion varchar(50) not null,
     correo varchar(50) not null,
     telefono varchar(50) not null
-)
+);
 
 create table cliente(
-    id_persona int auto_increment primary key,
+    id_persona int primary key,
     foreign key (id_persona) references persona(id)
 );
 
@@ -39,7 +39,7 @@ create table venta(
     id_cliente int not null,
     fecha varchar(50) not null,
     total double not null,
-    foreign key(id_cliente) references cliente(id)
+    foreign key(id_cliente) references cliente(id_persona)
 );
 
 create table detalle_venta(
