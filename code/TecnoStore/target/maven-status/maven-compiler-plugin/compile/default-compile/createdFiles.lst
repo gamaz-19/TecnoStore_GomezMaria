@@ -1,5 +1,6 @@
 model\Marca.class
 model\MenuPrincipal.class
+view\Tests.class
 controller\gestionClientes.class
 model\Persona.class
 model\Venta.class

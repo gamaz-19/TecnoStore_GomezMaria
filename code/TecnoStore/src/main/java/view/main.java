@@ -2,10 +2,15 @@ package View;
 
 //Deendencia para la coneccion con bd
 import Controller.ConecctionDB;
+
+//Para prueba de insercion datos marca
 import Controller.MarcaCRUD;
 import Model.Marca;
+
+
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
 
@@ -20,21 +25,5 @@ public class Main {
         System.out.println("Hola mundo :3 ");
         
         
-        
-        System.out.println("Prueba insercion marca nueva");
-        
-        
-        MarcaCRUD marcaCRUD = new MarcaCRUD();
-        
-        // Iserta una nueva marca
-        System.out.println("Insertando ....");
-        Marca nuevaMarca = new Marca("Huawei");
-        marcaCRUD.insertar(nuevaMarca);
-        System.out.println("ID generado: " + nuevaMarca.getId() + "\n");
-        
-        Marca nuevaMarca2 = new Marca("Samsung");
-        marcaCRUD.insertar(nuevaMarca2);
-        System.out.println("ID generado: " + nuevaMarca.getId() + "\n");
-
     }
 }
