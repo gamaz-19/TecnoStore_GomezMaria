@@ -2,10 +2,12 @@ model\Marca.class
 model\MenuPrincipal.class
 view\Tests.class
 controller\gestionClientes.class
+controller\ClienteCRUD.class
 model\Persona.class
 model\Venta.class
 model\Detalle_venta.class
 model\Celular.class
+controller\PersonaCRUD.class
 model\Celular$Gama.class
 controller\MarcaCRUD.class
 model\Celular$SistemaOperativo.class

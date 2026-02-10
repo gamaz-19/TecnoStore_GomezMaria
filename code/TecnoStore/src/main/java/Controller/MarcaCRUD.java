@@ -20,7 +20,7 @@ public class MarcaCRUD {
     }
 
     //C-create-insertar nueva marca
-    public boolean insertarMarca(Marca marca) throws SQLException {
+    public boolean insertarMarca(Marca marca)  {
         //La plantilla para saber como se van a inseretar los datos
         String sql = "insert into marca(nombre) values(?)";
 
@@ -50,7 +50,7 @@ public class MarcaCRUD {
     //R- read(Leer todas las marcas)
     
         //Por ID
-    public Marca obtenerPorId(int id) throws SQLException {
+    public Marca obtenerPorId(int id) {
 
         //La plantilla para saber como se van a inseretar los datos
         String sql = "select * from marca where id = ?";
@@ -77,7 +77,7 @@ public class MarcaCRUD {
     }
 
         //Obtener todas las marcas
-    public List<Marca> obtenerTodas() throws SQLException {
+    public List<Marca> obtenerTodas()  {
         String sql = "select * from marca";
         List<Marca> marcas = new ArrayList<>();
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -97,7 +97,7 @@ public class MarcaCRUD {
 
     //U-update(actualizar marca)
     
-    public boolean actualizarMarca(Marca marca) throws SQLException {
+    public boolean actualizarMarca(Marca marca)  {
         String sql = "update marca set nombre = ? where id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, marca.getNombre());
@@ -115,7 +115,7 @@ public class MarcaCRUD {
 
     //D-delete(eliminar marca)
     
-    public boolean eliminarMarca(int id) throws SQLException {
+    public boolean eliminarMarca(int id)  {
         String sql = "delete from marca where id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, id);
@@ -125,7 +125,7 @@ public class MarcaCRUD {
                 return true;
             }
         } catch (SQLException e) {
-            System.err.println("Error al eliminar marca " + e.getMessage());
+            System.err.println(e.getMessage());   
         }
         return false;
     }

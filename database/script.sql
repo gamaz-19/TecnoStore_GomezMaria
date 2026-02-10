@@ -23,7 +23,7 @@ create table celular(
 create table persona(
     id int auto_increment primary key,
     nombre varchar(50)not null,
-    identificacion varchar(50) not null,
+    identificacion varchar(50) not null unique,
     correo varchar(50) not null,
     telefono varchar(50) not null
 );
