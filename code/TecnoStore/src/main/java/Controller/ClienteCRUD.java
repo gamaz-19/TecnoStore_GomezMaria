@@ -22,7 +22,7 @@ public class ClienteCRUD {
         this.personaCRUD = new PersonaCRUD();
     }
 
-    // C - Insertar nuevo cliente (primero se inserta como persona)
+    // C - create - Insertar nuevo cliente (primero se inserta como persona)
     public boolean insertarCliente(Cliente cliente) {
 
         // INsertar/ crear persona primerp
