@@ -1,5 +1,6 @@
-package Controller;
+package Persistence;
 
+import Controller.ConecctionDB;
 import Model.Cliente;
 import Model.Venta;
 import java.sql.*;

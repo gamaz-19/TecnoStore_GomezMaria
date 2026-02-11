@@ -22,11 +22,14 @@ public class Venta {
 
     //Constructor sin id para creacion de nueva venta
     public Venta(String fecha, double total, Cliente cliente, List<Detalle_venta> detalles) {
-        this.fecha = fecha;
-        this.total = total;
-        this.cliente = cliente;
-        this.detalles = new ArrayList<>();
-    }
+    this.fecha = fecha;
+    this.total = total;
+    this.cliente = cliente;
+    this.detalles = detalles;
+}
+
+    
+    
     
     
     // Metodos para manejar los detalles

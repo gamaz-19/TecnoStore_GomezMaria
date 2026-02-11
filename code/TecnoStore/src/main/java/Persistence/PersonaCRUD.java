@@ -1,5 +1,6 @@
-package Controller;
+package Persistence;
 
+import Controller.ConecctionDB;
 import Model.Persona;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,7 +41,7 @@ public class PersonaCRUD {
                     persona.setId(generatedKeys.getInt(1));
 
                 }
-                System.out.println("Persona insertada correctamente" + persona.getNombre());
+                System.out.println("Persona insertada correctamente: " + persona.getNombre());
             }
 
         } catch (SQLException e) {

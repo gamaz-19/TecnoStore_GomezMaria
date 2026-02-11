@@ -1,5 +1,6 @@
-package Controller;
+package Persistence;
 
+import Controller.ConecctionDB;
 import Model.Marca;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

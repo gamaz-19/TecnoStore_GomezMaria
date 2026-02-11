@@ -1,5 +1,7 @@
-package Controller;
+package Persistence;
 
+import Controller.ConecctionDB;
+import Persistence.VentaCRUD;
 import Model.Celular;
 import Model.Detalle_venta;
 import Model.Venta;

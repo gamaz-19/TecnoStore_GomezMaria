@@ -1,5 +1,7 @@
-package Controller;
+package Persistence;
 
+import Controller.ConecctionDB;
+import Persistence.MarcaCRUD;
 import Model.Celular;
 import Model.Marca;
 import java.sql.Connection;

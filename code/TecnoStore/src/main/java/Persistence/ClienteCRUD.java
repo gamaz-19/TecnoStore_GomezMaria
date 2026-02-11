@@ -1,5 +1,7 @@
-package Controller;
+package Persistence;
 
+import Controller.ConecctionDB;
+import Persistence.PersonaCRUD;
 import Model.Cliente;
 import Model.Persona;
 import java.sql.Connection;

@@ -39,5 +39,9 @@ public class Marca {
                 + ", nombre='" + nombre + '\''
                 + '}';
     }
+//    return"""
+//          marca: 
+//          id: %s
+//          """
 
 }

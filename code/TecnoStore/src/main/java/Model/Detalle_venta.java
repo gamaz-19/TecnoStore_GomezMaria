@@ -24,6 +24,14 @@ public class Detalle_venta {
         this.subtotal = calcularSubtotal();
     }
 
+    //Constructor par gestion de ventas
+    public Detalle_venta(int cantidad, Celular celular, Venta venta) {
+        this.cantidad = cantidad;
+        this.celular = celular;
+        this.venta = venta;
+        this.subtotal = calcularSubtotal();
+    }
+
     // Calcular el subtotal
     private double calcularSubtotal() {
         return this.celular.getPrecio() * this.cantidad;

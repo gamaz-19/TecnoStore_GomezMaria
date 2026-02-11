@@ -9,6 +9,9 @@ public class Celular {
     private SistemaOperativo sistemaOperativo;
     private Gama gama;
 
+    public Celular(String modelo, double precio, int stock, SistemaOperativo so, Gama gama, Marca marca) {
+    }
+
     public enum SistemaOperativo {
         IOS, ANDROID
     }
@@ -98,7 +101,7 @@ public class Celular {
     public String toString() {
         return "Celular{"
                 + "id=" + id
-                + ", modelo='" + modelo + '\''
+                + ", modelo='" + modelo 
                 + ", precio=" + precio
                 + ", stock=" + stock
                 + ", sistemaOperativo=" + sistemaOperativo
