@@ -42,13 +42,13 @@ public class MenuPrincipal {
                         break;
                     case 5:
                         salir = true;
-                        System.out.println("--- ¡Gracias por usar TecnoStore! ---");
+                        System.out.println("#### ¡¡¡Gracias por usar TecnoStore!!! #####");
                         break;
                     default:
-                        System.out.println("Opción inválida");
+                        System.out.println("OpciOn invalida");
                 }
             } catch (SQLException e) {
-                System.err.println("Error de base de datos: " + e.getMessage());
+                System.err.println(e.getMessage());
             }
         }
 
@@ -58,7 +58,8 @@ public class MenuPrincipal {
     private void mostrarMenuPrincipal() {
         System.out.println("""
                        *****************************************************
-                                   TECNOSTORE - MENU PRINCIPAL
+                                           TECNOSTORE 
+                                   BIENVENIDO AL MENU PRINCIPAL
                        *****************************************************
                        1. Gestion de Celulares
                        2. Gestion de Clientes

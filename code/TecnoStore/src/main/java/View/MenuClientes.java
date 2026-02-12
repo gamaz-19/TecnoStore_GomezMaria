@@ -32,7 +32,7 @@ public class MenuClientes {
                            *****************************************************
                            """);
 
-        int opcion = leerEntero("Opción: ");
+        int opcion = leerEntero("Opcion: ");
 
         switch (opcion) {
             case 1:
@@ -58,18 +58,19 @@ public class MenuClientes {
         List<Cliente> clientes = clienteCRUD.obtenerTodos();
 
         if (clientes.isEmpty()) {
-            System.out.println("No hay clientes registrados");
+            System.out.println("-- No hay clientes registrados --");
             return;
         }
 
-        System.out.println("\n┌──────────────────────────── CLIENTES ────────────────────────────┐");
-        System.out.printf("│ %-4s │ %-20s │ %-15s │ %-20s │%n",
-                "ID", "NOMBRE", "IDENTIFICACIÓN", "CORREO");
-        System.out.println("├──────┼──────────────────────┼─────────────────┼──────────────────────┤");
+        System.out.println("*****************************************************");
+        System.out.println("\n**************** CLINETES ***************************");
+        System.out.printf("* %-4s * %-20s * %-15s * %-20s *%n",
+                "ID", "NOMBRE", "IDENTIFICACION", "CORREO");
+        System.out.println("*****************************************************");
 
         for (Cliente c : clientes) {
             Persona p = c.getPersona();
-            System.out.printf("│ %-4d │ %-20s │ %-15s │ %-20s │%n",
+            System.out.printf("* %-4d * %-20s * %-15s * %-20s *%n",
                     c.getId(),
                     p.getNombre(),
                     p.getIdentificacion(),
@@ -88,21 +89,21 @@ public class MenuClientes {
             return;
         }
 
-        String identificacion = leerTexto("Identificación: ");
+        String identificacion = leerTexto("Identificacion: ");
         if (!Validator.validarIdentificacion(identificacion)) {
-            System.out.println("La identificación debe tener entre 6 y 13 caracteres");
+            System.out.println("La identificacion debe tener entre 6 y 13 caracteres");
             return;
         }
 
         String correo = leerTexto("Correo: ");
         if (!Validator.validarCorreo(correo)) {
-            System.out.println("Correo inválido");
+            System.out.println("Correo invalido");
             return;
         }
 
-        String telefono = leerTexto("Teléfono: ");
+        String telefono = leerTexto("Telefono: ");
         if (!Validator.validarTelefono(telefono)) {
-            System.out.println("El teléfono debe tener 10 dígitos");
+            System.out.println("El telefono debe tener 10 digitos");
             return;
         }
 

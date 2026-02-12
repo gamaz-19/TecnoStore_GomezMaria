@@ -1,7 +1,6 @@
 package Persistence;
 
 import Controller.ConecctionDB;
-import Persistence.VentaCRUD;
 import Model.Celular;
 import Model.Detalle_venta;
 import Model.Venta;
@@ -38,7 +37,7 @@ public class DetalleVentaCRUD {
                 if (rs.next()) {
                     detalle.setId(rs.getInt(1));
                 }
-                System.out.println("Detalle de venta insertado correctamente");
+                System.out.println("-- Detalle de venta insertado correctamente --");
                 return true;
             }
 
@@ -125,7 +124,7 @@ public class DetalleVentaCRUD {
             stmt.setInt(1, id);
 
             if (stmt.executeUpdate() > 0) {
-                System.out.println("Detalle de venta eliminado correctamente");
+                System.out.println("-- Detalle de venta eliminado correctamente --");
                 return true;
             }
 

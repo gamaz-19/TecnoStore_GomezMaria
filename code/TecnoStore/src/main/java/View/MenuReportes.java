@@ -6,7 +6,6 @@ import Model.Celular;
 import Model.Venta;
 import Utilities.UtilsFile;
 import Utilities.ReportUtils;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,19 +21,23 @@ public class MenuReportes {
         this.ventaCRUD = new VentaCRUD();
     }
 
-    public void mostrar() throws SQLException {
-        System.out.println("\n┌────────────────────────────────────┐");
-        System.out.println("│          REPORTES                  │");
-        System.out.println("└────────────────────────────────────┘");
-        System.out.println("  1. Stock bajo");
-        System.out.println("  2. Top 3 más vendidos");
-        System.out.println("  3. Ventas del mes");
-        System.out.println("  4. Generar archivo reporte_ventas.txt");
-        System.out.println("  5. Resumen general");
-        System.out.println("  6. Volver");
-        System.out.println("────────────────────────────────────");
+    public void mostrar()  {
 
-        int opcion = leerEntero("Opción: ");
+        System.out.println("""
+                              *****************************************************
+                                             GESTION DE CELULARES
+                              *****************************************************
+                              1. Stock bajo
+                              2. Top 3 mas vendidos
+                              3. Ventas del mes
+                              4. Generar archivo reporte_ventas.txt
+                              5. Resumen general
+                              6.Volver
+                              *****************************************************
+                           
+                           """);
+
+        int opcion = leerEntero("Opcion: ");
 
         switch (opcion) {
             case 1:
@@ -55,19 +58,22 @@ public class MenuReportes {
             case 6:
                 break;
             default:
-                System.out.println("❌ Opción inválida");
+                System.out.println("Opcion invalida");
         }
     }
 
-    private void reporteStockBajo() throws SQLException {
+    private void reporteStockBajo()  {
         List<Celular> celulares = celularCRUD.obtenerTodos();
         List<Celular> stockBajo = ReportUtils.celularesStockBajo(celulares);
 
-        System.out.println("\n📊 CELULARES CON STOCK BAJO (< 5 unidades):");
-        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-
+        System.out.println("""
+                   *****************************************************
+                          CELULARES CON STOCK BAJO (< 5 unidades):
+                   *****************************************************
+                   """);
+      
         if (stockBajo.isEmpty()) {
-            System.out.println("✅ Todos los celulares tienen stock suficiente\n");
+            System.out.println(" Todos los celulares tienen stock suficiente (Mayor a 5)\n");
         } else {
             for (Celular c : stockBajo) {
                 System.out.printf("• %s - Stock: %d unidades\n", c.getModelo(), c.getStock());
@@ -76,12 +82,15 @@ public class MenuReportes {
         }
     }
 
-    private void reporteTop3() throws SQLException {
+    private void reporteTop3()  {
         List<Venta> ventas = ventaCRUD.obtenerTodos();
         var top3 = ReportUtils.top3MasVendidos(ventas);
 
-        System.out.println("\n🏆 TOP 3 CELULARES MÁS VENDIDOS:");
-        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+        System.out.println("""
+                   *****************************************************
+                             TOP 3 CELULARES MÁS VENDIDOS:
+                   *****************************************************
+                   """);
 
         int posicion = 1;
         for (var entry : top3) {
@@ -91,30 +100,32 @@ public class MenuReportes {
         System.out.println();
     }
 
-    private void reporteVentasMes() throws SQLException {
-        String mes = leerTexto("Ingrese el mes (formato YYYY-MM, ej: 2025-02): ");
+    private void reporteVentasMes()  {
+        String mes = leerTexto("-- Ingrese el mes (formato YYYY-MM, ej: 2025-02): ");
 
         List<Venta> ventas = ventaCRUD.obtenerTodos();
         double totalMes = ReportUtils.ventasTotalesPorMes(ventas, mes);
 
-        System.out.println("\n📈 VENTAS DEL MES " + mes + ":");
-        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-        System.out.printf("Total: $%.2f\n\n", totalMes);
+        
+        System.out.println("*****************************************************");
+        System.out.println("\n        VENTAS DEL MES " + mes + ":");
+        System.out.println("*****************************************************");
+        System.out.printf("-- Total: $%.2f\n\n", totalMes);
     }
 
-    private void generarArchivoReporte() throws SQLException {
+    private void generarArchivoReporte()  {
         List<Venta> ventas = ventaCRUD.obtenerTodos();
         String rutaArchivo = "reporte_ventas.txt";
 
-        System.out.println("\n📄 Generando archivo...");
+        System.out.println("\n * Generando archivo...");
         boolean generado = UtilsFile.generarReporteVentas(ventas, rutaArchivo);
 
         if (generado) {
-            System.out.println("✅ Archivo generado: " + rutaArchivo + "\n");
+            System.out.println("--- Archivo generado: " + rutaArchivo + "\n");
         }
     }
 
-    private void reporteResumenGeneral() throws SQLException {
+    private void reporteResumenGeneral()  {
         List<Celular> celulares = celularCRUD.obtenerTodos();
         List<Venta> ventas = ventaCRUD.obtenerTodos();
 
@@ -126,7 +137,7 @@ public class MenuReportes {
     private int leerEntero(String mensaje) {
         System.out.print(mensaje);
         while (!scanner.hasNextInt()) {
-            System.out.print("❌ Ingrese un número válido: ");
+            System.out.print("-- Ingrese un numero valido: ");
             scanner.next();
         }
         int valor = scanner.nextInt();

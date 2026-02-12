@@ -41,7 +41,7 @@ public class PersonaCRUD {
                     persona.setId(generatedKeys.getInt(1));
 
                 }
-                System.out.println("Persona insertada correctamente: " + persona.getNombre());
+                System.out.println("-- Persona insertada correctamente: " + persona.getNombre()+" --");
             }
 
         } catch (SQLException e) {
@@ -114,7 +114,7 @@ public class PersonaCRUD {
             stmt.setInt(2, persona.getId());
             int actualizar = stmt.executeUpdate();
             if (actualizar > 0) {
-                System.out.println("Persona actualizada correctamente " + persona.getNombre());
+                System.out.println("-- Persona actualizada correctamente " + persona.getNombre()+" --");
                 return true;
             }
         } catch (SQLException e) {
@@ -131,7 +131,7 @@ public class PersonaCRUD {
             stmt.setInt(1, id);
             int eliminar = stmt.executeUpdate();
             if (eliminar > 0) {
-                System.out.println("Persona eliminada correctamente");
+                System.out.println("-- Persona eliminada correctamente --");
                 return true;
             }
         } catch (SQLException e) {

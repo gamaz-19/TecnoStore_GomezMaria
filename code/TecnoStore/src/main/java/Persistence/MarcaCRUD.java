@@ -91,7 +91,7 @@ public class MarcaCRUD {
                 marcas.add(marca);
             }
         } catch (SQLException e) {
-            System.err.println("Error al obtener todas las marcas " + e.getMessage());
+            System.err.println(e.getMessage());
         }
         return marcas;
     }
@@ -105,11 +105,11 @@ public class MarcaCRUD {
             stmt.setInt(2, marca.getId());
             int actualizar = stmt.executeUpdate();
             if (actualizar > 0) {
-                System.out.println("Marca actualizada correctamente " + marca.getNombre());
+                System.out.println("-- Marca actualizada correctamente " + marca.getNombre()+" --");
                 return true;
             }
         } catch (SQLException e) {
-            System.err.println("Error al actualizar marca " + e.getMessage());
+            System.err.println(e.getMessage());
         }
         return false;
     }
@@ -122,7 +122,7 @@ public class MarcaCRUD {
             stmt.setInt(1, id);
             int eliminar = stmt.executeUpdate();
             if (eliminar > 0) {
-                System.out.println("Marca eliminada correctamente");
+                System.out.println("-- Marca eliminada correctamente --");
                 return true;
             }
         } catch (SQLException e) {

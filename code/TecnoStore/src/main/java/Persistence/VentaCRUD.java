@@ -34,7 +34,7 @@ public class VentaCRUD {
                 if (rs.next()) {
                     venta.setId(rs.getInt(1));
                 }
-                System.out.println("Venta insertada correctamente");
+                System.out.println("-- Venta insertada correctamente --");
                 return true;
             }
 
@@ -120,7 +120,7 @@ public class VentaCRUD {
             stmt.setInt(1, id);
 
             if (stmt.executeUpdate() > 0) {
-                System.out.println("Venta eliminada correctamente");
+                System.out.println("-- Venta eliminada correctamente --");
                 return true;
             }
 

@@ -34,7 +34,7 @@ public class gestionVentas {
    
     public boolean registrarVenta(int idCliente, List<ItemVenta> items) {
 
-        // 1. Validar que el cliente exista
+        //Se valida que el cliente exista
         Cliente cliente = clienteCRUD.obtenerPorId(idCliente);
         if (cliente == null) {
             System.err.println("Error: Cliente no encontrado");
@@ -57,12 +57,12 @@ public class gestionVentas {
             Celular celular = celularCRUD.obtenerPorId(item.getIdCelular());
 
             if (celular == null) {
-                System.err.println(" Error: Celular no encontrado (ID: " + item.getIdCelular() + ")");
+                System.err.println("-- Error: Celular no encontrado (ID: " + item.getIdCelular() + ")");
                 return false;
             }
 
             if (celular.getStock() < item.getCantidad()) {
-                System.err.println(" Error: Stock insuficiente para " + celular.getModelo());
+                System.err.println("-- Error: Stock insuficiente para " + celular.getModelo());
                 return false;
             }
 

@@ -1,7 +1,6 @@
 package Persistence;
 
 import Controller.ConecctionDB;
-import Persistence.PersonaCRUD;
 import Model.Cliente;
 import Model.Persona;
 import java.sql.Connection;
@@ -46,12 +45,12 @@ public class ClienteCRUD {
 
             if (insertar > 0) {
                 cliente.setId(persona.getId());
-                System.out.println(" Cliente insertado correctamente ");
+                System.out.println("-- Cliente insertado correctamente --");
                 return true;
             }
 
         } catch (SQLException e) {
-            System.err.println("Error al insertar cliente");
+            System.err.println("-- Error al insertar cliente --");
         }
 
         return false;
@@ -78,7 +77,7 @@ public class ClienteCRUD {
             }
 
         } catch (SQLException e) {
-            System.err.println("Error al obtener cliente por ID: ");
+            System.err.println("-- Error al obtener cliente por ID --");
 
         }
 
@@ -104,7 +103,7 @@ public class ClienteCRUD {
             }
 
         } catch (SQLException e) {
-            System.err.println("Error al obtener todos los clientes: ");
+            System.err.println("-- Error al obtener todos los clientes --");
 
         }
 
@@ -118,14 +117,14 @@ public class ClienteCRUD {
         Persona persona = cliente.getPersona();
 
         if (persona == null) {
-            System.err.println("El cliente no tiene persona asociada");
+            System.err.println("-- El cliente no tiene persona asociada --");
             return false;
         }
 
         boolean actualizado = personaCRUD.actualizarPersona(persona);
 
         if (actualizado) {
-            System.out.println("Cliente actualizado correctamente: ");
+            System.out.println("-- Cliente actualizado correctamente --");
         }
 
         return actualizado;
@@ -145,12 +144,12 @@ public class ClienteCRUD {
             if (eliminar > 0) {
                 // Despues se elimina la persona
                 personaCRUD.eliminarPersona(id);
-                System.out.println(" Cliente eliminado correctamente");
+                System.out.println("-- Cliente eliminado correctamente --");
                 return true;
             }
 
         } catch (SQLException e) {
-            System.err.println("Error al eliminar cliente: " + e.getMessage());
+            System.err.println(e.getMessage());
 
         }
 
